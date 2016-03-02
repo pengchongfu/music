@@ -5,8 +5,10 @@ var switchButton=document.getElementById("switchButton");
 var nextButton=document.getElementById("nextButton");
 var previousButton=document.getElementById("previousButton");
 var playState=document.getElementById("playState");
+var listButton=document.getElementById("listButton");
 var process=$("#process");
 var bar=$('#bar');
+var list=$("#list");
 
 //获取音乐列表信息
 (function(){
@@ -26,6 +28,10 @@ var bar=$('#bar');
       }
   );
 })();
+playList.map(function(item){
+    list.append("<li>"+item+"</li>");
+    return;
+});
 
 var audio=document.createElement("audio");
 audio.index=0;
@@ -36,6 +42,9 @@ updateState();
 switchButton.addEventListener("click",playOrPause);
 nextButton.addEventListener("click",nextSong);
 previousButton.addEventListener('click',previousSong);
+listButton.addEventListener("click",function(){
+    list.css("display")==="block"?list.css("display","none"):list.css("display","block");
+});
 
 function switchSong(){
     audio.src='music/'+playList[audio.index];
@@ -95,3 +104,10 @@ function changeProcess(e){
     audio.currentTime=audio.duration*persent;
     bar.css("width",persent*100+"%");
 }
+
+
+$("ul li").click(function(){
+    audio.index=$(this).index();
+    switchSong();
+    updateState();
+});
