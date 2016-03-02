@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <title>彭崇甫的音乐台</title>
+    <meta charset="utf-8" >
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      #playpane {
+        width:96px;
+        background: #99FFFF;
+        white-space:nowrap;
+        text-overflow: ellipsis;
+        overflow:hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="playpane" >
+      <svg width="24" height="24" fill="#000000" id="musicIcon" style="display:inline">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 5h-3v5.5c0 1.38-1.12 2.5-2.5 2.5S10 13.88 10 12.5s1.12-2.5 2.5-2.5c.57 0 1.08.19 1.5.51V5h4v2zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"/>
+      </svg>
+      
+      <span id="playState">正在播放</span>
+      <br />
+        
+      <svg width="24" height="24" fill="#000000" id="previousButton" style="display:inline">
+        <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg><!-- 
+   --><div id="switchButton" style="display:inline-block;width:24px;height:24px">
+      <svg width="24" height="24" fill="#000000" id="playButton" style="display:inline">
+        <path d="M8 5v14l11-7z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+
+      <svg width="24" height="24" fill="#000000" id="pauseButton" style="display:none">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+      </div><!-- 
+   --><svg width="24" height="24" fill="#000000" id="nextButton" style="display:inline">
+        <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg><!-- 
+   --><svg width="24" height="24" fill="#000000" id="listButton" style="display:inline">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M15 6H3v2h12V6zm0 4H3v2h12v-2zM3 16h8v-2H3v2zM17 6v8.18c-.31-.11-.65-.18-1-.18-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3V8h3V6h-5z"/>
+      </svg>
+    </div>
+
+    </div>
+
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/music.js" charset="utf-8"></script>
+  </body>
+</html>  
