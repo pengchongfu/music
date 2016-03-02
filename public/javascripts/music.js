@@ -5,6 +5,8 @@ var switchButton=document.getElementById("switchButton");
 var nextButton=document.getElementById("nextButton");
 var previousButton=document.getElementById("previousButton");
 var playState=document.getElementById("playState");
+var process=$("#process");
+var bar=$('#bar');
 
 //获取音乐列表信息
 (function(){
@@ -78,4 +80,18 @@ function updateState(){
 
 audio.addEventListener("ended",function(){
     nextSong();
-})
+});
+
+audio.addEventListener("timeupdate",function(){
+    var persent=audio.currentTime/audio.duration;
+    bar.css("width",persent*100+"%");
+});
+
+
+process.click(changeProcess);
+
+function changeProcess(e){
+    var persent=(e.pageX-process.offset().left)/process.width();
+    audio.currentTime=audio.duration*persent;
+    bar.css("width",persent*100+"%");
+}

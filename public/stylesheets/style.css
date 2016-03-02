@@ -1,8 +1,22 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+#playpane {
+  width:96px;
+  background: #99FFFF;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  overflow:hidden;
 }
 
-a {
-  color: #00B7FF;
+#bar {
+  background: black;
+  height:2px;
+  display:block;
+  width:0%;
+}
+
+#process {
+  background:#fff;
 }

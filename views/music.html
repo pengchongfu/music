@@ -3,19 +3,7 @@
   <head>
     <title>彭崇甫的音乐台</title>
     <meta charset="utf-8" >
-    <style>
-      body {
-        padding: 0;
-        margin: 0;
-      }
-      #playpane {
-        width:96px;
-        background: #99FFFF;
-        white-space:nowrap;
-        text-overflow: ellipsis;
-        overflow:hidden;
-      }
-    </style>
+    <link rel="stylesheet" href="stylesheets/style.css" type="text/css"></link>
   </head>
   <body>
     <div id="playpane" >
@@ -23,9 +11,12 @@
         <path d="M0 0h24v24H0z" fill="none"/>
         <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 5h-3v5.5c0 1.38-1.12 2.5-2.5 2.5S10 13.88 10 12.5s1.12-2.5 2.5-2.5c.57 0 1.08.19 1.5.51V5h4v2zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"/>
       </svg>
+
       
       <span id="playState">正在播放</span>
       <br />
+
+      <div id="process"><span id="bar"></span></div>
         
       <svg width="24" height="24" fill="#000000" id="previousButton" style="display:inline">
         <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
