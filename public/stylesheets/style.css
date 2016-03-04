@@ -1,23 +1,90 @@
 body {
   padding: 0;
   margin: 0;
-  cursor:pointer;
+  text-align: center;
+  background: #22c3aa;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #eeeeee;
 }
-#playpane {
 
-  background: #99FFFF;
-  white-space:nowrap;
-  text-overflow: ellipsis;
-  overflow:hidden;
+div {
+  display: inline-block;
+}
+
+svg {
+  width:25%;
+}
+
+#playpane {
+  margin: 0 auto;
+  width: 20%;
+}
+#playStatediv {
+  width:80%;
+  overflow: hidden;
+}
+#playState {
+  display:inline-block;
+  white-space: nowrap;
+  animation: scroll 6s linear infinite;
+}
+
+@keyframes scroll {
+  0% {transform: translateX(0px);}
+  50% {transform: translateX(-100%);}
+  50.01% {transform: translateX(100%);}
+  100% {transform: translateX(0px);}
+}
+
+
+#leftTime {
+  width: 25%;
+}
+
+#process {
+  width: 75%;
+  background:#fff;
 }
 
 #bar {
   background: black;
-  height:5px;
+  height:6px;
   display:block;
   width:0%;
 }
 
-#process {
-  background:#fff;
+#switchButton {
+  width: 25%;
+}
+
+#playButton,#pauseButton {
+  width: 100%;
+}
+
+ul {
+  margin:0;
+  -webkit-padding-start: 5%;
+  -moz-padding-start: 0;
+}
+
+li {
+  text-align: left;
+  list-style-type: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#musicIcon{
+  width: 20%;
+  animation:rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {transform: rotateZ(0deg);}
+  to {transform: rotateZ(360deg);}
+}
+
+#process,#previousButton,#switchButton,#nextButton,#listButton,#list {
+  cursor:pointer;
 }
